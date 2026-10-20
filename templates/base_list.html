@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>{% block list-title %}Lista{% endblock %}</h1>
+    {% if object_list %}
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    {% block list-header %}{% endblock %}
+                </tr>
+            </thead>
+            <tbody>
+                {% block list-body %}{% endblock %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>Nessun elemento presente.</p>
+    {% endif %}
+    {% block list-footer %}{% endblock %}
+{% endblock %}

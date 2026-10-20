@@ -1,0 +1,11 @@
+{% extends "base_detail.html" %}
+{% block detail-title %}{{ scuola.name }}{% endblock %}
+{% block detail-content %}
+    <p><strong>Nome:</strong> {{ scuola.name }}</p>
+    <p><strong>Indirizzo:</strong> {{ scuola.street }}, {{ scuola.zip_code }} {{ scuola.city }} ({{ scuola.province }})</p>
+    <p><strong>Paese:</strong> {{ scuola.country }}</p>
+    {% if scuola.phone %}<p><strong>Telefono:</strong> {{ scuola.phone }}</p>{% endif %}
+    {% if scuola.email %}<p><strong>Email:</strong> {{ scuola.email }}</p>{% endif %}
+    {% if scuola.website %}<p><strong>Sito:</strong> <a href="{{ scuola.website }}">{{ scuola.website }}</a></p>{% endif %}
+    {% if scuola.vat %}<p><strong>P.IVA:</strong> {{ scuola.vat }}</p>{% endif %}
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "base_list.html" %}
+{% block list-title %}Sedi della Scuola{% endblock %}
+{% block list-header %}
+    <th>Nome</th>
+    <th>Città</th>
+    <th>Telefono</th>
+    <th>Email</th>
+    <th></th>
+{% endblock %}
+{% block list-body %}
+    {% for scuola in scuole %}
+        <tr>
+            <td>{{ scuola.name }}</td>
+            <td>{{ scuola.city }} ({{ scuola.province }})</td>
+            <td>{{ scuola.phone|default:"-" }}</td>
+            <td>{{ scuola.email|default:"-" }}</td>
+            <td><a href="{% url 'dettaglio_scuola' scuola.pk %}">Dettagli</a></td>
+        </tr>
+    {% endfor %}
+{% endblock %}

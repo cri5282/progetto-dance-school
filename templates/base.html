@@ -10,9 +10,10 @@
 </head>
 <body>
     <nav>
-        <a href="/"><strong>Dance Academy Carpi</strong></a>
-        <a href="/">Home</a>
-        <a href="/chi-siamo/">Chi siamo</a>
+        <a href="{% url 'home' %}"><strong>Dance Academy Carpi</strong></a>
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'chi_siamo' %}">Chi siamo</a>
+        <a href="{% url 'lista_scuole' %}">Scuole</a>
     </nav>
 
     <main>
