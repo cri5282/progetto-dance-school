@@ -1,0 +1,9 @@
+{% extends "base_detail.html" %}
+{% block detail-title %}Corso: {{ object.subject }}{% endblock %}
+{% block detail-content %}
+    <p><strong>Materia:</strong> {{ object.subject }}</p>
+    <p><strong>Giorno:</strong> {{ object.day_of_the_week }}</p>
+    <p><strong>Ora di inizio:</strong> {{ object.starting_hour }}:00</p>
+    <p><strong>Aula:</strong> {{ object.classroom }}</p>
+    <p><strong>Scuola:</strong> {{ object.school }}</p>
+{% endblock %}
