@@ -1,0 +1,16 @@
+{% extends "base_list.html" %}
+{% block list-title %}Giorni della Settimana{% endblock %}
+{% block list-header %}
+    <th>N.</th>
+    <th>Giorno</th>
+    <th></th>
+{% endblock %}
+{% block list-body %}
+    {% for giorno in object_list %}
+        <tr>
+            <td>{{ giorno.number }}</td>
+            <td>{{ giorno.name }}</td>
+            <td><a href="{% url 'day_detail' giorno.pk %}">Dettagli</a></td>
+        </tr>
+    {% endfor %}
+{% endblock %}

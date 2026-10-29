@@ -7,5 +7,6 @@ urlpatterns = [
     path("", views.homepage, name="home"),
     path("chi-siamo/", views.chi_siamo, name="chi_siamo"),
     path("gestione-scuole/", include("schoolmanagement.urls")),
+    path("configurazione/", include("school.urls")),
     path("admin/", admin.site.urls),
 ]
