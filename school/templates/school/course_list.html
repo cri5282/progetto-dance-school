@@ -7,6 +7,7 @@
     <th>Aula</th>
     <th>Scuola</th>
     <th></th>
+    <th></th>
 {% endblock %}
 {% block list-body %}
     {% for corso in object_list %}
@@ -17,6 +18,10 @@
             <td>{{ corso.classroom.name }}</td>
             <td>{{ corso.school.name }}</td>
             <td><a href="{% url 'course_detail' corso.pk %}">Dettagli</a></td>
+            <td><a href="{% url 'course_update' corso.pk %}">Modifica</a></td>
         </tr>
     {% endfor %}
+{% endblock %}
+{% block list-footer %}
+    <a href="{% url 'course_create' %}">Crea nuovo corso</a>
 {% endblock %}
