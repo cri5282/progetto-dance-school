@@ -8,6 +8,7 @@
     <th>Scuola</th>
     <th></th>
     <th></th>
+    <th></th>
 {% endblock %}
 {% block list-body %}
     {% for corso in object_list %}
@@ -19,6 +20,7 @@
             <td>{{ corso.school.name }}</td>
             <td><a href="{% url 'course_detail' corso.pk %}">Dettagli</a></td>
             <td><a href="{% url 'course_update' corso.pk %}">Modifica</a></td>
+            <td><a href="{% url 'course_delete' corso.pk %}">Elimina</a></td>
         </tr>
     {% endfor %}
 {% endblock %}

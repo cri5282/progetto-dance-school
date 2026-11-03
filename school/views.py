@@ -1,5 +1,5 @@
 from django.urls import reverse_lazy
-from django.views.generic import ListView, DetailView, CreateView, UpdateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from school.models import DayOfTheWeek, Classroom, Course
 
 
@@ -36,4 +36,9 @@ class CourseCreateView(CreateView):
 class CourseUpdateView(UpdateView):
     model = Course
     fields = ["subject", "starting_hour", "day_of_the_week", "classroom", "school"]
+    success_url = reverse_lazy("course_list")
+
+
+class CourseDeleteView(DeleteView):
+    model = Course
     success_url = reverse_lazy("course_list")

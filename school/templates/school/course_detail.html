@@ -7,3 +7,8 @@
     <p><strong>Aula:</strong> {{ object.classroom }}</p>
     <p><strong>Scuola:</strong> {{ object.school }}</p>
 {% endblock %}
+{% block detail-actions %}
+    <a href="{% url 'course_update' object.pk %}" class="btn btn-warning mt-3">Modifica</a>
+    <a href="{% url 'course_delete' object.pk %}" class="btn btn-danger mt-3">Elimina</a>
+    <a href="{% url 'course_list' %}" class="btn btn-outline-secondary mt-3">Torna alla lista</a>
+{% endblock %}
