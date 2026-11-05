@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block title %}{% if object %}Modifica{% else %}Nuovo{% endif %} Giorno{% endblock %}
+{% block content %}
+    <h1>{% if object %}Modifica giorno{% else %}Aggiungi giorno{% endif %}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {% crispy form %}
+        <button type="submit" class="btn btn-success">Salva</button>
+        <a href="{% url 'day_list' %}" class="btn btn-secondary">Annulla</a>
+    </form>
+{% endblock %}

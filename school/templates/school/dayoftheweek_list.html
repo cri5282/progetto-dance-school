@@ -4,6 +4,7 @@
     <th>N.</th>
     <th>Giorno</th>
     <th></th>
+    <th></th>
 {% endblock %}
 {% block list-body %}
     {% for giorno in object_list %}
@@ -11,6 +12,10 @@
             <td>{{ giorno.number }}</td>
             <td>{{ giorno.name }}</td>
             <td><a href="{% url 'day_detail' giorno.pk %}">Dettagli</a></td>
+            <td><a href="{% url 'day_update' giorno.pk %}">Modifica</a></td>
         </tr>
     {% endfor %}
+{% endblock %}
+{% block list-footer %}
+    <a href="{% url 'day_create' %}">Aggiungi giorno</a>
 {% endblock %}

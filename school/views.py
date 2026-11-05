@@ -11,6 +11,18 @@ class DayOfTheWeekDetailView(DetailView):
     model = DayOfTheWeek
 
 
+class DayOfTheWeekCreateView(CreateView):
+    model = DayOfTheWeek
+    fields = ["number", "name"]
+    success_url = reverse_lazy("day_list")
+
+
+class DayOfTheWeekUpdateView(UpdateView):
+    model = DayOfTheWeek
+    fields = ["number", "name"]
+    success_url = reverse_lazy("day_list")
+
+
 class ClassroomListView(ListView):
     model = Classroom
 
