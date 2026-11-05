@@ -6,6 +6,8 @@
     <th>Telefono</th>
     <th>Email</th>
     <th></th>
+    <th></th>
+    <th></th>
 {% endblock %}
 {% block list-body %}
     {% for scuola in scuole %}
@@ -15,6 +17,11 @@
             <td>{{ scuola.phone|default:"-" }}</td>
             <td>{{ scuola.email|default:"-" }}</td>
             <td><a href="{% url 'dettaglio_scuola' scuola.pk %}">Dettagli</a></td>
+            <td><a href="{% url 'school_update' scuola.pk %}">Modifica</a></td>
+            <td><a href="{% url 'school_delete' scuola.pk %}">Elimina</a></td>
         </tr>
     {% endfor %}
+{% endblock %}
+{% block list-footer %}
+    <a href="{% url 'school_create' %}">Aggiungi nuova scuola</a>
 {% endblock %}
