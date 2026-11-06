@@ -3,4 +3,18 @@
 {% block detail-content %}
     <p><strong>Nome:</strong> {{ object.name }}</p>
     <p><strong>Capacità:</strong> {{ object.capacity }} posti</p>
+
+    <h3 class="mt-4">Corsi in questa aula</h3>
+    {% if object.courses.count %}
+        <ul class="list-group">
+            {% for corso in object.courses.all %}
+                <li class="list-group-item">
+                    <a href="{% url 'course_detail' corso.pk %}">{{ corso.subject }}</a>
+                    - {{ corso.day_of_the_week.name }} ore {{ corso.starting_hour }}:00
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p class="text-muted">Nessun corso assegnato a questa aula.</p>
+    {% endif %}
 {% endblock %}
