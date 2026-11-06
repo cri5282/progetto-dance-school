@@ -11,6 +11,7 @@ nav {
     display: flex;
     gap: 1.5rem;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 nav a {
@@ -20,13 +21,14 @@ nav a {
 }
 
 nav a:hover {
-    color: #bdc3c7;
+    color: #3498db;
 }
 
 main {
     max-width: 900px;
     margin: 2rem auto;
     padding: 0 1rem;
+    min-height: 60vh;
 }
 
 footer {
@@ -35,4 +37,13 @@ footer {
     margin-top: 3rem;
     color: #666;
     font-size: 0.9rem;
+}
+
+h1 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.table th {
+    background-color: #ecf0f1;
 }
